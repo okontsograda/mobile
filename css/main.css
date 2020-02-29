@@ -64,14 +64,14 @@ body {
 
 .navbar {
     background-color:white;
-    width: 100%;
+    width: 20%;
+    margin-left: 25px;
 }
 
 a {
     color: white;
     padding: 1em 1.4em;
     border-radius: 100%;
-    font-size: 1.2rem;
     text-decoration: none;
 }
 
@@ -89,16 +89,44 @@ a:hover {
     background-color: #66bb6a;
 }
 
+.table-container {
+    padding: 8px 5px 0px 5px;
+}
+
+.table-dark {
+    border-radius: 5px;
+}
+
+/* table headers - remove top border for radius */
+.table-dark th {
+    border-top: none;;
+}
+
 @media only screen
     and (min-device-width: 320px)
     and (max-device-width:480px)
 {
+    body {
+        margin-bottom: 65px;
+    }
+    
     /* Place the navbar at the bottom of the page, and make it stick */
     .navbar {
+        padding-top: 5px;
         background-color:white;
         overflow: hidden;
         position: fixed;
         bottom: 0;
+        height: 65px;
         width: 100%;
+        margin-left:0;
+    }
+
+    .table-container {
+        font-size: .9em;
+    }
+
+    .date, .category {
+        display:none;
     }
 }
