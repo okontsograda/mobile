@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
@@ -17,7 +18,7 @@
 
 </head>
 <body>
-
+<div class="banner"></div>
 <div class="navbar" id="myNavbar">
     <a href="" class="add-income" data-toggle="modal" data-target="#inc-form">M</a>
     <a href="" class="add-income" data-toggle="modal" data-target="#inc-form">+</a>
@@ -27,19 +28,26 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4 col-lg-3">
+            <div class="card-counter primary">
+                <i class="fa fa-ticket"></i>
+                <span class="count-numbers">$1,234.55</span>
+                <span class="count-name">Year-to-date</span>
+            </div>
+          </div>
+        <div class="col-md-4 col-lg-3">
+        <div class="card-counter success">
+            <i class="fa fa-ticket"></i>
+            <span class="count-numbers">$1,234.55</span>
+            <span class="count-name">Income</span>
+        </div>
+        </div>
+        <div class="col-md-4 col-lg-3">
             <div class="card-counter danger">
               <i class="fa fa-ticket"></i>
               <span class="count-numbers">$2,345.54</span>
               <span class="count-name">Expenses</span>
             </div>
-          </div>
-          <div class="col-md-4 col-lg-3">
-            <div class="card-counter success">
-              <i class="fa fa-ticket"></i>
-              <span class="count-numbers">$1,234.55</span>
-              <span class="count-name">Income</span>
-            </div>
-          </div>
+        </div>
     </div>
 </div>
 
@@ -102,6 +110,36 @@
         </div>
     </div>
     </div>
+
+<script>
+
+window.addEventListener('load', function() {
+    function getCurrentWeather() {
+        var url = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/";
+        var apiKey = "3556b960b9c39020b5714a0d4c1d5b64";
+
+        navigator.geolocation.getCurrentPosition(success, error);
+
+        function success(position) {
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+
+            $.getJSON (
+                url + apiKey + "/" + latitude + "," + longitude,
+                function(data) {
+                    var temp = data.currently.temperature;
+                    document.querySelector("#temp").innerText = temp;
+            });
+        }
+
+        function error() {
+            console.log('Unable to retrieve the location');
+        }
+    }
+
+});
+
+</script>
 
 </body>
 </html>
