@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <style>
+
+    </style>
+
+</head>
+<body>
+
+<div class="navbar" id="myNavbar">
+    <a href="" class="add-income" data-toggle="modal" data-target="#inc-form">M</a>
+    <a href="" class="add-income" data-toggle="modal" data-target="#inc-form">+</a>
+    <a href="" class="add-expense" data-toggle="modal" data-target="#inc-form">-</a>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 col-lg-3">
+            <div class="card-counter danger">
+              <i class="fa fa-ticket"></i>
+              <span class="count-numbers">$2,345.54</span>
+              <span class="count-name">Expenses</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <div class="card-counter success">
+              <i class="fa fa-ticket"></i>
+              <span class="count-numbers">$1,234.55</span>
+              <span class="count-name">Income</span>
+            </div>
+          </div>
+    </div>
+</div>
+
+<div class="modal fade" id="inc-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form class="border border-light p-4" action="#!">
+        
+                <div class="form-group">
+                    <!-- Income name -->
+                    <label for="exampleInputEmail1">Income Name</label>
+                    <input type="text" id="income_name" class="form-control" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <!-- Upload Date -->
+                    <label for="exampleInputEmail1">Date Received</label>
+                    <input type="date" id="income_date" class="form-control">
+                </div>
+                <div class="form-group">
+                    <!-- Category -->
+                    <label for="exampleInputEmail1">Income Category</label>
+                    <select class="form-control" name="inc_category" id="income_category">
+                        <option value="Auto Maint" selected disabled>Chose category...</option>
+                        <option value="Auto Maint">Auto Maint</option>
+                        <option value="Auto Maint">Hotel</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <!-- File Upload -->
+                        <label class="btn btn-primary btn-file">Upload Image
+                            <input type="file" name="expense-image" style="display: none;">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <!-- Amount -->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">$</span>
+                            </div>
+                            <input type="number" class="form-control" placeholder="10.00">
+                        </div>
+                    </div>
+        
+                <!-- Sign up button -->
+        
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+</html>
