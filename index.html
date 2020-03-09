@@ -10,42 +10,48 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/9ec3f8f6e3.js"></script>
 
+    <!-- FontAwesome CDN -->
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/main.css">
-
 </head>
 <body>
 <div class="banner"></div>
 <div class="navbar" id="myNavbar">
-    <a href="" class="nav-btn add-income" data-toggle="modal" data-target="#inc-form">M</a>
-    <a href="" class="nav-btn add-income" data-toggle="modal" data-target="#inc-form">+</a>
-    <a href="" class="nav-btn add-expense" data-toggle="modal" data-target="#inc-form">-</a>
+    <a href="" class="nav-btn add-income" data-toggle="modal" data-target="#inc-form"><i class="fa fa-tachometer"></i></a>
+    <a href="" class="nav-btn add-income" data-toggle="modal" data-target="#inc-form"><i class="fa fa-plus"></i></a>
+    <a href="" class="nav-btn add-expense" data-toggle="modal" data-target="#inc-form"><i class="fa fa-minus"></i></a>
+</div>
+
+<div class="header-banner">
+    <div class="card-counter card-header primary">
+        <a class="user-profile" href=""><i class="fa fa-user"></i></a>
+    <a href="" class="add-record" data-toggle="modal" data-target="#inc-form"><i class="fa fa-plus"></i></a>
+    </div>
 </div>
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4 col-lg-3">
-            <div class="card-counter primary">
-                <i class="fa fa-ticket"></i>
-                <span class="count-numbers">$1,234.55</span>
-                <span class="count-name">Year-to-date</span>
-            </div>
-          </div>
-        <div class="col-md-4 col-lg-3">
-        <div class="card-counter success">
-            <i class="fa fa-ticket"></i>
-            <span class="count-numbers">$1,234.55</span>
-            <span class="count-name">Income</span>
-        </div>
-        </div>
-        <div class="col-md-4 col-lg-3">
-            <div class="card-counter danger">
-              <i class="fa fa-ticket"></i>
-              <span class="count-numbers">$2,345.54</span>
-              <span class="count-name">Expenses</span>
+    <div class="container finance-info">
+        <div class="container summary">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 left-amount">
+                    <div class="card-counter success">
+                        <span class="count-numbers">$1,234.55</span>
+                        <span class="count-name">Income</span>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 right-amount">
+                    <div class="card-counter danger">
+                      <span class="count-numbers">$2,345.54</span>
+                      <span class="count-name">Expenses</span>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="container info-menu">
+        
     </div>
     <div class="table-container">
         <table class="table table-hover table-dark">
